@@ -5,6 +5,7 @@ import { initParticlesEngine } from '@tsparticles/react';
 
 const ParticlesBackground = () => {
   const [init, setInit] = useState(false);
+  const isMobile = window.innerWidth < 768;
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -23,9 +24,9 @@ const ParticlesBackground = () => {
         background: {
           color: { value: '#111827' },
         },
-        fpsLimit: 60,
+        fpsLimit: isMobile ? 30 : 60,
         particles: {
-          number: { value: 80, density: { enable: true, value_area: 800 } },
+          number: { value: isMobile ? 40 : 80, density: { enable: true, value_area: 800 } },
           color: { value: ['#4ade80', '#f472b6', '#ffffff'] },
           shape: { type: ['circle', 'triangle'] },
           opacity: { value: 0.6, random: true },
@@ -49,7 +50,7 @@ const ParticlesBackground = () => {
         },
         interactivity: {
           events: {
-            onhover: { enable: true, mode: 'attract' },
+            onhover: { enable: !isMobile, mode: 'attract' },
             onclick: { enable: true, mode: 'push' }
           },
           modes: {

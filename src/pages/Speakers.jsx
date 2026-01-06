@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import bensonOkwara from '../assets/benson-okwara.jpg'; // Existing
-import cynthiaMadubuko from '../assets/cynthia-madubuko.jpg'; // New - adjust extension if needed
-import sebastineOiwoh from '../assets/sebastine-oiwoh.jpg'; // New - adjust extension if needed
+import bensonOkwara from '../assets/benson-okwara.jpg';
+import cynthiaMadubuko from '../assets/cynthia-madubuko.jpg';
+import sebastineOiwoh from '../assets/sebastine-oiwoh.jpg';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -86,7 +86,7 @@ const Speakers = () => {
             <p className="text-lg text-green-400 font-medium">Publicity Committee, Scientific Committee</p>
           </motion.div>
 
-          {/* Placeholder cards - remove or update as more speakers are added */}
+          {/* Placeholder cards */}
           <motion.div 
             variants={childVariants} 
             className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-transform text-gray-300"

@@ -29,7 +29,7 @@ const pageTransition = {
 function App() {
   const location = useLocation();
   return (
-    <div className="relative min-h-screen overflow-hidden bg-linear-to-b from-gray-900 to-gray-800"> {/* Dark gradient */}
+    <div className="relative min-h-screen overflow-hidden bg-linear-to-b from-gray-900 to-gray-800 overflow-x-hidden">
       <ParticlesBackground />
       <Navbar />
       <AnimatePresence mode="wait">
