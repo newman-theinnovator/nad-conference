@@ -47,7 +47,7 @@ const FunFacts = () => {
               The Bini people have four market days: Ekioba, Ekenaka, Agbado, and Eken.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white p-6 rounded-lg shadow-md hover:scale-105 transition-transform"> {/* Hover for fun */}
             <h4 className="text-2xl font-semibold mb-4">Delta State</h4>
             <ul className="list-disc pl-5 space-y-2 text-lg">
               <li>A major oil-producing state, supplying about 35% of Nigeria's crude oil and natural gas.</li>

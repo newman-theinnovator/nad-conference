@@ -15,7 +15,7 @@ const VenueMap = () => {
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
   return (
     <section className="py-12 px-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto shadow-md rounded-lg overflow-hidden">
         <h3 className="text-3xl font-bold mb-6 text-center">Venue: Benin City, Edo State</h3>
         <LoadScript googleMapsApiKey={apiKey}>
           <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>

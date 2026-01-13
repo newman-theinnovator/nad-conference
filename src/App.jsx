@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ParallaxProvider } from 'react-scroll-parallax'; // For parallax effects
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SubThemes from './components/SubThemes';
 import About from './components/About';
@@ -10,6 +12,11 @@ import VenueMap from './components/VenueMap';
 import FunFacts from './components/FunFacts';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
+import AOS from 'aos'; // For scroll animations
+import 'aos/dist/aos.css'; // AOS styles
+
+// Initialize AOS for global scroll animations
+AOS.init({ duration: 1000, once: true });
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -18,34 +25,37 @@ const sectionVariants = {
 
 function App() {
   return (
-    <div className="min-h-screen bg-linear-to-b from-pink-50 to-white">
-      <Hero />
-      <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-        <SubThemes />
-      </motion.section>
-      <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-        <About />
-      </motion.section>
-      <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-        <Agenda />
-      </motion.section>
-      <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-        <Speakers />
-      </motion.section>
-      <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-        <Sponsors />
-      </motion.section>
-      <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-        <VenueMap />
-      </motion.section>
-      <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-        <FunFacts />
-      </motion.section>
-      <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-        <Newsletter />
-      </motion.section>
-      <Footer />
-    </div>
+    <ParallaxProvider>
+      <div className="min-h-screen bg-linear-to-b from-pink-50 to-white">
+        <Navbar />
+        <Hero />
+        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} data-aos="fade-up">
+          <SubThemes />
+        </motion.section>
+        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} data-aos="fade-up">
+          <About />
+        </motion.section>
+        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} data-aos="fade-up">
+          <Agenda />
+        </motion.section>
+        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} data-aos="fade-up">
+          <Speakers />
+        </motion.section>
+        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} data-aos="fade-up">
+          <Sponsors />
+        </motion.section>
+        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} data-aos="fade-up">
+          <VenueMap />
+        </motion.section>
+        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} data-aos="fade-up">
+          <FunFacts />
+        </motion.section>
+        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants} data-aos="fade-up">
+          <Newsletter />
+        </motion.section>
+        <Footer />
+      </div>
+    </ParallaxProvider>
   );
 }
 
